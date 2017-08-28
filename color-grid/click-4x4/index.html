@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<title> Color Grid </title>
+		<style>
+
+			* {
+    			box-sizing: border-box;
+    		}
+
+			.box {
+				width: 25vw;
+				height: 25vh;
+				display: inline-block;
+				margin: -4px;
+			}
+
+			.black {
+
+				background-color: black;
+			}
+
+			.white {
+				background-color: white;
+			}
+
+
+			.red{
+				background-color: red;
+			}
+
+			.blue{
+				background-color: blue;
+			}
+
+
+		</style>
+
+		<script
+  			src="https://code.jquery.com/jquery-3.2.1.min.js"
+ 			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  			crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+	<script>
+		$("div").on("click", function() {
+    	$(this).css("background", "red");
+		})
+
+	</script>
+
+	</body>
+
+</html>
