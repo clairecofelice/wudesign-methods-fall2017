@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<title> Color Grid </title>
+
+		<style>
+
+			* {
+    			box-sizing: border-box;
+    		}
+
+			.box {
+				width: 25vw;
+				height: 25vh;
+				display: inline-block;
+				margin: -4px;
+			}
+
+
+			.box:hover {
+   				z-index: 2;
+   				-webkit-transition: all 200ms ease-in;
+                -webkit-transform: scale(1.5);
+                -ms-transition: all 200ms ease-in;
+                -ms-transform: scale(1.5);   
+                -moz-transition: all 200ms ease-in;
+                -moz-transform: scale(1.5);
+                transition: all 200ms ease-in;
+                transform: scale(1.5);
+			}
+
+			.black {
+
+				background-color: black;
+			}
+
+			.white {
+				background-color: white;
+
+			}
+
+			@keyframes spin {
+				from { transform: rotate(0deg); }
+				to { transform: rotate(360deg); }
+			}
+
+			.black:hover {
+				border-radius: 50%;
+				transform: scale(.5);
+				animation-name: spin;
+				background: radial-gradient(blue, yellow, green);
+			}
+
+
+
+		</style>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+
+
+		</script>
+
+	</head>
+
+	<body>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+			<div class="box white"> 
+			</div>
+
+			<div class="box black"> 
+			</div>
+
+
+			<script>
+
+			function getRandomColor() {
+  		    var letters = '0123456789ABCDEF';
+  		    var color = '#';
+  		    for (var i = 0; i < 6; i++) {
+   				color += letters[Math.floor(Math.random() * 16)];
+  			}
+  				return color;
+			}
+
+			$(document).ready(function(){
+
+				$(".white").click(function() {
+    				$(this).css({
+    					'background-color': getRandomColor(),
+    				});
+
+    			});
+				
+		
+			});
+
+
+		</script>
+
+	</body>
+
+</html>
