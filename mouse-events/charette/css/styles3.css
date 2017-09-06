@@ -1,0 +1,171 @@
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+.box {
+	width: 19vw;
+	height: 20vh;
+	display: inline-block;
+	text-align: center;
+}
+
+.row1 {
+	width: 100vw;
+	height: auto;
+	text-align: center;
+	margin-top: 5vh;
+}
+
+.b1 {
+	background-color: #E6E6FA;
+}
+
+.rotate {
+	transform: rotate(45deg);
+}
+
+.b2 {
+	background-color: #D8BFD8;
+}
+
+.skew {
+	transform: skew(100deg);
+}
+
+.b3 {
+	background-color: #DDA0DD;
+}
+
+.translate {
+	transform: translate(100px,100px);
+}
+
+.b4 {
+	background-color: #EE82EE;
+}
+
+.slowSpin {
+	transform: rotate(-360deg);
+	transition: all 2s ease;
+}
+
+.b5 {
+	background-color: #FF00FF;
+}
+
+.leftSlide {
+	transform: translateX(-100vw);
+	transition: all 1s ease;
+}
+
+.row2 {
+	width: 100vw;
+	height: auto;
+	text-align: center;
+}
+
+.b6{
+	background-color: #BA55D3;
+}
+
+.diagonalSlide {
+	transform: translate(100vw,100vh);
+	transition: all 1s ease;
+}
+
+.b7 {
+	background-color: #9370DB;
+}
+
+.slowFall {
+	transform: translateY(100vh);
+	transition: all 10s ease;
+}
+
+.b8{
+	background-color: #663399;
+}
+
+.expandingSpin {
+	transform: rotate(360deg) scale(10);
+	transition: all 3s linear;
+}
+
+.b9{
+	background-color: #8A2BE2;	
+}
+
+.fallingSpin {
+	transform: translateY(100vh) rotate(360deg);
+	transition: all 1s linear;
+}
+
+.b10{
+	background-color: #9400D3;		
+}
+
+.skew2 {
+	transform: skew(10000deg);
+	transition: all 1s linear;
+}
+
+.row3 {
+	width: 100vw;
+	height: auto;
+	text-align: center;
+}
+
+.b11{
+	background-color: #9932CC;		
+}
+
+.slowShrink {
+	transform: scale(0);
+	transition: all 5s ease;
+}
+
+.b12{
+	background-color: #8B008B;		
+}
+
+.evaporate {
+	transform: translateY(-70vh);
+	transition: all 5s ease;
+	opacity: 0.1;
+}
+
+.b13{
+	background-color: #800080;		
+}
+
+.borderChange {
+	border: 10px dotted blue;
+	transition: all 0.5s linear;
+}
+
+@keyframes updown {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    75%  {top: 50px}
+    100% {top: 100px;}
+   }
+
+.b14{
+	background-color: #4B0082;	
+	position: relative;
+}
+
+.ab14{
+	animation: updown 5s infinite;	
+}
+
+.b15{
+	background-color: #6A5ACD;	
+	border: 4px dotted yellow;
+}
+
+.borderShrink {
+	transform: scale(0) rotate(360deg);
+	border-radius: 50%;
+	transition: all 1s ease;
+}

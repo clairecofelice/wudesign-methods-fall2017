@@ -1,0 +1,24 @@
+{
+  "entrypoints" : [
+    {
+      "name" : "Charette1",
+      "file" : "charette1.html"
+    },
+    {
+      "name" : "Charette2",
+      "file" : "charette2.html"
+    },
+    {
+      "name" : "Charette3",
+      "file" : "charette3.html"
+    },
+    {
+      "name" : "Charette4",
+      "file" : "charette4.html"
+    }
+    {
+      "name" : "Charette5",
+      "file" : "charette5.html"
+   }
+  ]
+}

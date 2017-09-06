@@ -1,0 +1,204 @@
+html {
+	font-family: 'Roboto', sans-serif;
+	color: white;
+}
+
+.box {
+	width: 19vw;
+	height: 20vh;
+	display: inline-block;
+	text-align: center;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	display: flex;
+	justify-content: center; 
+	align-items: center; 
+	font-size: 20px;
+}
+
+.row1 {
+	width: 100vw;
+	height: auto;
+	text-align: center;
+	margin-top: 5vh;
+}
+
+.b1 {
+	background-color: #CD5C5C;
+}
+
+.b1:active {
+	background-color: yellow;
+}
+
+.b2 {
+	background-color: #F08080;
+}
+
+.b2:active {
+	z-index: 2;
+	-webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;    
+    transform: scale(1.5);
+}
+
+.b3 {
+	background-color: #FA8072;
+}
+
+
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+.b3:active {
+    -webkit-animation: spin 4s infinite linear;
+}
+
+.b4 {
+	background-color: #E9967A;
+}
+
+.b4:active {
+	transition: all 500ms ease-in;
+    border-radius: 50%;
+}
+
+.b5 {
+	background-color: #FFA07A;
+}
+
+@keyframes pulse {
+	0% {
+    	=background-color: grey;
+  	}
+ 		
+ 	100% {
+   		background-color: red;
+  	}
+}
+
+.b5:active {
+	animation: pulse 5s infinite;
+}
+
+.row2 {
+	width: 100vw;
+	height: auto;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.b6{
+	background-color: #DC143C;
+	font-size: 20px;
+}
+
+.b6:active {
+	text-transform: uppercase;
+}
+
+.b7 {
+	background-color: #FF0000;
+}
+
+.b7:active {
+	color: black;
+}
+
+.b8{
+	background-color: #B22222;
+}
+
+.b8:active {
+	font-family: 'Slabo 27px', serif;
+}
+
+.b9{
+	background-color: #8B0000;	
+	color: #8B0000;	
+}
+
+.b9:active {
+	z-index: 2;
+	-webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;    
+    transform: scale(0.5);
+}
+
+.b10 {
+	background-color: pink;		
+	color: pink;
+}
+
+.b10:active {
+	transition: all 500ms ease-out;
+    border-radius: 30%;
+    transform: scale(1.5);
+}
+
+.row3 {
+	width: 100vw;
+	height: auto;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.b11 {
+	background-color: #FFB6C1;		
+}
+
+.b11:active {
+	text-decoration: underline;
+}
+
+.b12 {
+	background-color: #FF69B4;		
+}
+
+.b12:active {
+	text-shadow: 2px 2px 5px black; 		
+}
+
+.b13 {
+	background-color: #FF1493;		
+}
+
+.b13:active {
+	background: repeating-radial-gradient(#FF69B4, #FFB6C1 10%, pink 15%);
+}
+
+.b14 {
+	background-color: #C71585;		
+}
+
+.b14:active {
+	border-radius: 50%;
+	max-height: 200px;
+	max-width: 200px;
+	background: radial-gradient(circle, red, #FF69B4, #FFB6C1); /* Standard syntax */
+}
+
+.b15 {
+	background-color: #DB7093;		
+}
+
+.b15:active {
+	 background: linear-gradient(to right, #DB7093 , pink); 
+}
+
