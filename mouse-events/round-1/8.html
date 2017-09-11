@@ -5,22 +5,28 @@
 <head>
 	<title> Eighth Experiment </title>
 	<style>
-		.box {
-			height: 2%;
-			width: 1.5%;
-			display: inline-block;
-			transition: all .5s ease;
-			background-color: white;
+		#canvas{
+			width: 1000;
+			height: 1000;
+		}
+
+		#clear:hover{
+			cursor: pointer;
+ 			text-decoration: underline;
 		}
 
 	</style>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
+	<canvas id="canvas"></canvas>
+
+	<div onclick="clear();" id="clear">Clear</div>
 
 <script>
-
 function getRandomColor() {
 	  var letters = '0123456789ABCDEF';
 	  var color = '#';
@@ -30,12 +36,46 @@ function getRandomColor() {
 	  	return color;
 }
 
-$('body').ready(function() {
-  $('body').css("cursor", "crosshair");
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var draw = false;
+
+$(document).on('mouseup mousedown','#canvas', function(event){
+    if(event.type == "mousedown"){
+       draw = true;
+    }
+    if(event.type == "mouseup"){
+       draw = false;
+    }
 });
 
-$(".box").mouseover(function() {
-  $(this).css("background-color", getRandomColor());
+
+
+$("#canvas").mousemove(function(arg) {
+    if(draw){
+      context.fillStyle = getRandomColor();
+      var pos = getMousePos(canvas, arg);
+      context.beginPath();
+	  context.arc(pos.x,pos.y,5,0,2*Math.PI);
+	  context.fill(); 
+     }
+});
+
+function getMousePos(canvas, e) {
+    var rect = canvas.getBoundingClientRect();  
+    return {
+        x: e.clientX - rect.left,              
+        y: e.clientY - rect.top
+    };
+}
+
+//Clear
+
+$("#clear").click(function() {
+    var c = document.getElementById("canvas");
+	var ctx = c.getContext("2d");
+	ctx.fillStyle = "#FFFFFF";
+	ctx.fillRect(0,0,380,300);
 });
 
 </script>
