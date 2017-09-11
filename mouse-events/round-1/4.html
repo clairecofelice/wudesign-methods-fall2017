@@ -5,47 +5,19 @@
 <head>
 	<title> Fourth Experiment </title>
 
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<style> 
-
-	.spin {
-		transform: rotate(360deg) scale(10);
-		transition: all 3s linear;
-
-	}
-	.circle {
-		width: 99vw;
-		height: 99vh;
-		border-radius: 50%;
-		background-color: black;
-	}
-
-	.img {
-		background-image: url('https://res.cloudinary.com/simpleview/image/upload/c_fill,f_auto,h_467,q_65,w_1024/v1/clients/norway/hiking_fossjuvet_forsand_norway_6fcf1221-3beb-4285-ae3d-322253a6a436.jpg');
-	}
-
-</style>
-
 </head>
 
 <body>
 
 <script>
-window.onload = choosePic;
 
- var images = new Arrary['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'];
- var basePath="images/";
+var randomImage = new Array("images/img1.jpg", "images/img2.jpg", "images/img3.jpg", "images/img4.jpg", "images/img5.jpg", "images/img6.jpg", "images/img7.jpg", "images/img8.jpg", "images/img9.jpg", "images/img10.jpg");
 
-
-function getRandomImage(imgAr, path) {
-    path = path || 'images/'; 
-    var num = Math.floor( Math.random() * imgAr.length );
-    var img = imgAr[ num ];
-    var imgStr = '<img src="' + path + img + '" alt = "">';
-    document.write(imgStr); document.close();
-}
-
-
+function getRandomImage() { 
+	var number = Math.floor(Math.random()*randomImage.length);
+	document.write('<img src="'+randomImage[number]+'" />');
+	}
+getRandomImage()
 
 </script>
 
