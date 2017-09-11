@@ -27,11 +27,16 @@ function getRandomColor() {
 	  	return color;
 }
 
+function randNum() {
+	var num = Math.random()*100;
+	  	return num;
+}
+
 $("#canvas").click(function(e){
      getPosition(e); 
 });
 
-var pointSize = 30;
+var pointSize = randNum();
 
 function getPosition(event){
      var rect = canvas.getBoundingClientRect();
