@@ -4,6 +4,16 @@
 
 <head>
 	<title> Eighth Experiment </title>
+	<style>
+		.box {
+			height: 2%;
+			width: 1.5%;
+			display: inline-block;
+			transition: all .5s ease;
+			background-color: white;
+		}
+
+	</style>
 
 </head>
 
@@ -20,9 +30,12 @@ function getRandomColor() {
 	  	return color;
 }
 
+$('body').ready(function() {
+  $('body').css("cursor", "crosshair");
+});
+
 $(".box").mouseover(function() {
-  var color = randomColor();
-  $(this).css("background-color", randomColor());
+  $(this).css("background-color", getRandomColor());
 });
 
 </script>

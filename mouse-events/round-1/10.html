@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title> Tenth Experiment </title>
+	<style>
+
+	</style>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+
+<body>
+
+<canvas id="canvas" width="1500" height="1000" style="cursor:crosshair;"></canvas>
+
+<script>
+
+function getRandomColor() {
+	  var letters = '0123456789ABCDEF';
+	  var color = '#';
+	  for (var i = 0; i < 6; i++) {
+	    color += letters[Math.floor(Math.random() * 16)];
+	  }
+	  	return color;
+}
+
+$("#canvas").click(function(e){
+     getPosition(e); 
+});
+
+var pointSize = 30;
+
+function getPosition(event){
+     var rect = canvas.getBoundingClientRect();
+     var x = event.clientX - rect.left;
+     var y = event.clientY - rect.top;
+        
+     drawCoordinates(x,y);
+}
+
+function drawCoordinates(x,y){	
+  	var ctx = document.getElementById("canvas").getContext("2d");
+
+
+  	ctx.fillStyle = getRandomColor(); // Red color
+
+    ctx.beginPath();
+    ctx.arc(x, y, pointSize, 0, Math.PI * 2, true);
+    ctx.fill();
+}
+</script>
+
+</body>
+
+</html>
