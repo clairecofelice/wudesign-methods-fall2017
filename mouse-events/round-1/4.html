@@ -6,8 +6,6 @@
 	<title> Fourth Experiment </title>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script type="text/javascript" src="scripts.js"></script>
-
 	<style> 
 
 	.spin {
@@ -16,12 +14,15 @@
 
 	}
 	.circle {
-		width: 10vw;
-		height: 10vh;
+		width: 99vw;
+		height: 99vh;
 		border-radius: 50%;
 		background-color: black;
 	}
 
+	.img {
+		background-image: url('https://res.cloudinary.com/simpleview/image/upload/c_fill,f_auto,h_467,q_65,w_1024/v1/clients/norway/hiking_fossjuvet_forsand_norway_6fcf1221-3beb-4285-ae3d-322253a6a436.jpg');
+	}
 
 </style>
 
@@ -29,13 +30,22 @@
 
 <body>
 
-<div class="circle">  </div>
-
 <script>
+window.onload = choosePic;
 
-$("div").on("click", function() {
-	 $("body").addClass("circle");    		
-	})
+ var images = new Arrary['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'];
+ var basePath="images/";
+
+
+function getRandomImage(imgAr, path) {
+    path = path || 'images/'; 
+    var num = Math.floor( Math.random() * imgAr.length );
+    var img = imgAr[ num ];
+    var imgStr = '<img src="' + path + img + '" alt = "">';
+    document.write(imgStr); document.close();
+}
+
+
 
 </script>
 

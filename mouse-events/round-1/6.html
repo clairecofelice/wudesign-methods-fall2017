@@ -11,16 +11,15 @@
 	<style>
 
 	body {
-		background-color: green;
+		background-color: pink;
 	}
 	* {
     		box-sizing: border-box;
     		}
 
 			.circle {
-				border-radius: 50%;
-				width: 32vw;
-				height: 32vh;
+				width: 19vw;
+				height: 19vh;
 				display: inline-block;
 				margin: 0px;
 			}
@@ -35,7 +34,7 @@
 			}
 
 			.expandingSpin {
-				transform: rotate(360deg) scale(10);
+				transform: rotate(360deg) scale(2);
 				transition: all 3s linear;
 			}
 
@@ -54,10 +53,36 @@
 	<div class="circle black"> </div>
 	<div class="circle white"> </div>
 	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+
 	
 <script>
+
+function getRandomColor() {
+	  var letters = '0123456789ABCDEF';
+	  var color = '#';
+	  for (var i = 0; i < 6; i++) {
+	    color += letters[Math.floor(Math.random() * 16)];
+	  }
+	  	return color;
+}
 		$(".black").on("click", function() {
-    	$(this).css("background-color", "green");
+    	$(this).css("background-color", getRandomColor());
 		})
 
 		$( ".white" ).click(function() {
