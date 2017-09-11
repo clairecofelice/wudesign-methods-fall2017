@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title> Eighth Experiment </title>
+
+</head>
+
+<body>
+
+<script>
+
+function getRandomColor() {
+	  var letters = '0123456789ABCDEF';
+	  var color = '#';
+	  for (var i = 0; i < 6; i++) {
+	    color += letters[Math.floor(Math.random() * 16)];
+	  }
+	  	return color;
+}
+
+$(".box").mouseover(function() {
+  var color = randomColor();
+  $(this).css("background-color", randomColor());
+});
+
+</script>
+
+</body>
+
+</html>
