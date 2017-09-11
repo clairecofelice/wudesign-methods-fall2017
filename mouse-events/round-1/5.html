@@ -29,8 +29,6 @@
 		border-radius: 50%;
 		margin-top: auto;
 		margin-bottom: auto;
-		margin-left: 30vw:
-		margin-right: 30vw;
 	}
 
 </style>
@@ -45,10 +43,6 @@
 
 <script>
 
-$(".circle").click(function() {
-	$(this).css("background-color", getRandomColor());
-	});
-
 	function getRandomColor() {
 	  var letters = '0123456789ABCDEF';
 	  var color = '#';
@@ -61,6 +55,11 @@ $(".circle").click(function() {
 $("div").on("click", function() {
         $(".circles").append( $('<div>', {class: 'circle'}));    
 	})
+
+$("body").click(function() {
+	$(".circle").css("background-color", getRandomColor());
+	});
+
 
 </script>
 
