@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title> Second Experiment </title>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="scripts.js"></script>
+
+	<style>
+
+	body {
+		background-color: pink;
+	}
+	* {
+    		box-sizing: border-box;
+    		}
+
+			.circle {
+				border-radius: 50%;
+				width: 32vw;
+				height: 32vh;
+				display: inline-block;
+				margin: 0px;
+			}
+
+			.black {
+
+				background-color: black;
+			}
+
+			.white {
+				background-color: white;
+			}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	<div class="circle white"> </div>
+	<div class="circle black"> </div>
+	
+<script>
+		$(".black").on("click", function() {
+    	$(this).css("background", "red");
+		})
+
+		$(".white").on("click", function() {
+    	$(this).css("background", "blue");
+		})
+
+</script>
+
+</body>
+
+</html>
