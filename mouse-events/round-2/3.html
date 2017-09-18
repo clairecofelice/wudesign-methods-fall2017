@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1,  user-scalable=no,minimal-ui" name="viewport">
+    <title>Round 2 | Experiment 3</title>
+   
+    <style>
+
+        #target {
+            display: block;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+    </style>
+
+</head>
+
+<body style="margin:0;text-align:center;">
+
+    <img id="target" src="img/helen.jpg" onclick="explode()"/>
+
+    <script src="lib/jquery-3.1.0.js"></script>
+    <script src="scripts/explode.js"></script> <!--original script found at https://www.npmjs.com/package/jquery-image-explode-->
+   
+	<script>
+        var $target = $("#target");
+        function explode() {
+            $target.explode({
+                    maxWidth: 35,
+                    minWidth: 5,
+                    radius: 200,
+                    release: true,
+                    recycle: false,
+                    explodeTime: 400,
+                    canvas: true,
+                    round: true,
+                    maxAngle: 360,
+                    gravity: 0,
+                    groundDistance: 150,
+             });
+        }
+    </script>
+
+</body>
+
+</html>

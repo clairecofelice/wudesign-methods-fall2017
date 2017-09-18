@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+	<title>Round 2 | Experiment 7</title>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="scripts/smallExplode.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<style>
+
+	* {
+    		box-sizing: border-box;
+    	}
+
+.clipped-box {
+	cursor: pointer;
+	-webkit-transition: top 1.2s linear;
+	transition: top 1.2s linear;	
+}
+.clipped-box div {
+	z-index: 9999999;
+	font-size: 1em;
+	padding: 50px 20px;
+	text-align: center;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.clipped-box, .clipped-box div {
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	position: relative;				
+	display: inline-block;
+
+}
+
+.clipped-box div {
+	position: absolute;
+	top: auto;
+	left: 0;
+	background-color: pink;
+	background-image: url(img/helen.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-transition: -webkit-transform 1.4s ease-in, background 0.3s ease-in;
+	transition: transform 1.4s ease-in, background 0.3s ease-in;
+}
+
+
+
+	</style>
+
+</head>
+
+<body>
+
+<div class="clipped-box">		
+	<div class="content">
+	</div>			
+</div>		
+
+</body>
+</html>
