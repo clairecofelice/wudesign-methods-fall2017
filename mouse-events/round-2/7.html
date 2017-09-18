@@ -2,234 +2,222 @@
 <html>
 
 <head>
-
 	<title>Round 2 | Experiment 7</title>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="scripts/smallExplode.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script src="scripts/smallExplode2.js"></script>
 
 	<style>
 
-	* {
-    		box-sizing: border-box;
-    	}
+		* {
+	    	box-sizing: border-box;
+	    }
 
-body {
-    background-image: url(img/helen.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    }
+		body {
+	    	background-image: url(img/helen.jpg);
+	    	background-repeat: no-repeat;
+	    	background-size: cover;
+	    }
 
-.clipped-box {
-	cursor: pointer;
-	-webkit-transition: top 1.2s linear;
-	transition: top 1.2s linear;	
-}
-.clipped-box div {
-	z-index: 9999999;
-	font-size: 1em;
-	padding: 50px 20px;
-	text-align: center;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	background: white;
-}
+		.clipped-box {
+			cursor: pointer;
+			-webkit-transition: top 1.2s linear;
+			transition: top 1.2s linear;	
+		}
 
-.clipped-box, .clipped-box div {
-	width: 12vw;
-	height: 12vh;
-	margin: 1px;
-	position: relative;				
-	display: inline-block;
+		.clipped-box div {
+			z-index: 999;
+			background: white;
+		}
 
-}
+		.clipped-box, .clipped-box div {
+			width: 12vw;
+			height: 12vh;
+			margin: 1px;
+			display: inline-block;
+		}	
 
-.clipped-box div {
-	position: absolute;
-	top: auto;
-	left: 0;
-	background: white;
-	-webkit-transition: -webkit-transform 1.4s ease-in, background 0.3s ease-in;
-	transition: transform 1.4s ease-in, background 0.3s ease-in;
-}
+		.clipped-box div {
+			position: absolute;
+			top: auto;
+			left: 0;
+			background: white;
+			-webkit-transition: -webkit-transform 1.4s ease-in, background 0.3s ease-in;
+			transition: transform 1.4s ease-in, background 0.3s ease-in;
+		}	
 
-
-
-</style>
-
+	</style>
 </head>
 
 <body>
-
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
-<div class="clipped-box">		
-	<div class="content"></div>			
-</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
+	<div class="clipped-box">		
+		<div class="content"></div>			
+	</div>	
 
 </body>
 </html>
