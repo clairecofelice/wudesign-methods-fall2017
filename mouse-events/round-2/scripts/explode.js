@@ -554,7 +554,6 @@
             shuffle(rags);
             return rags;
         }
-        //get an array of 4 corners of radius        
         function getRadiusData() {
             let ret = ["border-top-left-radius", "border-top-right-radius", "border-bottom-right-radius", "border-bottom-left-radius"];
             const width = $target.width();
