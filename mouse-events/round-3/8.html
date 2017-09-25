@@ -53,7 +53,27 @@
 				object.rotation.y = ry;
 
 				return object;
+			};
 
+			var bElement = function ( id, x, y, z, ry ) {
+
+				var div = document.createElement( 'div' );
+				div.style.width = '800px';
+				div.style.height = '800px';
+				div.style.backgroundColor = '#000';
+
+				var iframe = document.createElement( 'iframe' );
+				iframe.style.width = '800px';
+				iframe.style.height = '800px';
+				iframe.style.border = '0px';
+				iframe.src = [ 'img/', id, '?rel=0' ].join( '' );
+				div.appendChild( iframe );
+
+				var object = new THREE.CSS3DObject( div );
+				object.position.set( x, y, z );
+				object.rotation.y = ry;
+
+				return object;
 			};
 
 			init();
@@ -75,39 +95,46 @@
 				container.appendChild( renderer.domElement );
 
 				var group = new THREE.Group();
-				group.add( new Element( 'malevich.jpg', 0, 0, 240, 0 ) );
-				group.add( new Element( 'vangogh.jpg', 240, 0, 0, Math.PI / 2 ) );
-				group.add( new Element( 'pollock.jpg', 0, 0, - 240, Math.PI ) );
-				group.add( new Element( 'rothko.jpg', - 240, 0, 0, - Math.PI / 2 ) );
+				group.add( new Element( 'impressionism/caillebotte.jpg', 0, 0, 240, 0 ) );
+				group.add( new Element( 'impressionism/degas.jpg', 240, 0, 0, Math.PI / 2 ) );
+				group.add( new Element( 'impressionism/manet.jpg', 0, 0, - 240, Math.PI ) );
+				group.add( new Element( 'impressionism/monet.jpg', - 240, 0, 0, - Math.PI / 2 ) );
 				scene.add( group );
 
 				var group2 = new THREE.Group();
-				group.add( new Element( 'pollock.jpg', 0, 600, 240, 0 ) );
-				group.add( new Element( 'rothko.jpg', 240, 600, 0, Math.PI / 2 ) );
-				group.add( new Element( 'malevich.jpg', 0, 600, - 240, Math.PI ) );
-				group.add( new Element( 'vangogh.jpg', - 240, 600, 0, - Math.PI / 2 ) );
+				group.add( new Element( 'anouveau/klimt.png', 0, 600, 240, 0 ) );
+				group.add( new Element( 'anouveau/lautrec.jpg', 240, 600, 0, Math.PI / 2 ) );
+				group.add( new Element( 'anouveau/mucha.jpg', 0, 600, - 240, Math.PI ) );
+				group.add( new Element( 'anouveau/sullivan.jpg', - 240, 600, 0, - Math.PI / 2 ) );
 				scene.add( group2 );
 
 				var group3 = new THREE.Group();
-				group.add( new Element( 'malevich.jpg', 0, -600, 240, 0 ) );
-				group.add( new Element( 'vangogh.jpg', 240, -600, 0, Math.PI / 2 ) );
-				group.add( new Element( 'pollock.jpg', 0, -600, - 240, Math.PI ) );
-				group.add( new Element( 'rothko.jpg', - 240, -600, 0, - Math.PI / 2 ) );
+				group.add( new Element( 'fauvism/derain.jpg', 0, -600, 240, 0 ) );
+				group.add( new Element( 'fauvism/matisse.jpg', 240, -600, 0, Math.PI / 2 ) );
+				group.add( new Element( 'fauvism/matisse2.png', 0, -600, - 240, Math.PI ) );
+				group.add( new Element( 'fauvism/vlaminck.jpg', - 240, -600, 0, - Math.PI / 2 ) );
 				scene.add( group3 );
 
 				var group4 = new THREE.Group();
-				group.add( new Element( 'malevich.jpg', 0, -1200, 240, 0 ) );
-				group.add( new Element( 'vangogh.jpg', 240, -1200, 0, Math.PI / 2 ) );
-				group.add( new Element( 'pollock.jpg', 0, -1200, - 240, Math.PI ) );
-				group.add( new Element( 'rothko.jpg', - 240, -1200, 0, - Math.PI / 2 ) );
+				group.add( new Element( 'fauvism/derain.jpg', 0, -1200, 440, 0 ) );
+				group.add( new Element( 'fauvism/matisse.jpg', 240, -1200, 200, Math.PI / 2 ) );
+				group.add( new Element( 'fauvism/matisse2.png', 0, -1200, - 40, Math.PI ) );
+				group.add( new Element( 'fauvism/vlaminck.jpg', - 240, -1200, 200, - Math.PI / 2 ) );
 				scene.add( group4 );
+
+				//exp below
+
+				var group5 = new THREE.Group();
+				group.add( new bElement( 'fauvism/derainLg.jpg', 0, -2000, 800, 0 ) );
+				group.add( new bElement( 'fauvism/matisseLg.jpg', 400, -2000, 400, Math.PI / 2 ) );
+				group.add( new bElement( 'fauvism/matisse2Lg.png', 0, -2000, 0, Math.PI ) );
+				group.add( new bElement( 'fauvism/vlaminckLg.jpg', - 400, -2000, 400, - Math.PI / 2 ) );
+				scene.add( group5 );
 
 				controls = new THREE.TrackballControls( camera );
 				controls.rotateSpeed = 5;
 
 				window.addEventListener( 'resize', onWindowResize, false );
-
-				// Block iframe events when dragging camera
 
 				var blocker = document.getElementById( 'blocker' );
 				blocker.style.display = 'none';
@@ -132,6 +159,7 @@
 				renderer.render( scene, camera );
 
 			}
+
 
 		</script>
 	</body>
