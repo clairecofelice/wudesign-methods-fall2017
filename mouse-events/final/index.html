@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The White Box</title>
+	<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:700" rel="stylesheet">
+
+    
+    <style>
+
+	    body {
+	    	margin: 0;
+	    }
+
+	    body > a {
+  			transition:all 1s ease;
+		}
+
+	    canvas { 
+	    	width: 100%; 
+	    	height: 100%; 
+	    }
+
+	    #text {
+	    	font-family: 'Archivo Narrow', sans-serif;
+			position: absolute;
+			top: 45vh;
+			width: 100%;
+			text-align: center;
+			z-index: 10000;
+			display:block;
+			color: black;
+			font-size: 100px;
+			text-shadow: 2px 2px #FFFFFF;
+			text-transform: uppercase;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		@keyframes updown {
+    		0%   {top: 45vh;}
+    		50%  {top: 45.25vh;}
+    		100% {top: 45vh;}
+   		}
+
+	    .fade {
+	        opacity: 1;
+	        animation: updown 1s infinite;
+		}
+
+		.fade:hover {
+	        opacity: 0;
+		}
+
+    </style>
+
+</head>
+
+<body>
+   	
+   	<script src="scripts/three.js"></script>
+
+	
+	<a id="text" class="fade" href="main.html">The White Box</a>
+
+	<script>
+
+		var scene = new THREE.Scene();
+		var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+		var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+		var geometry = new THREE.BoxGeometry( 2, 2, 2 );
+		var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+		var cube = new THREE.Mesh( geometry, material );
+			
+			scene.add( cube );
+			camera.position.z = 4;
+
+			//var sound = new THREE.Audio( listener );
+				//audioLoader.load( 'audio/crowd.flac', function( buffer ) {
+					//sound.setBuffer( buffer );
+					//sound.setLoop(true);
+					//sound.setVolume(0.5);
+					//sound.play();
+
+		var isMouseDown = false;
+
+		function init(){
+		    window.addEventListener('mousedown', onMouseDown);
+		    window.addEventListener('mouseup', onMouseUp);
+		}
+
+		function onMouseDown(){
+		    isMouseDown = true;
+		}
+
+		function onMouseUp(){
+		    isMouseDown = false;
+		}
+
+		var animate = function () {
+			requestAnimationFrame( animate );
+			renderer.render(scene, camera);
+			cube.rotation.y += 0.005;
+
+		};
+			animate();
+
+		//var animate = function() {
+  			//requestAnimationFrame(animate);
+  			//cube.rotation.y += 0.1;
+		//};
+
+		//canvas.onclick = function() {
+  			//animate();
+		//};
+
+		div.click="window.open('index.html')";
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The White Box</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		
+		<style>
+			html, body {
+				height: 100%;
+				overflow: hidden;
+			}
+			#blocker {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="scripts/three.js"></script>
+		<script src="scripts/controls/TrackballControls.js"></script>
+		<script src="scripts/renderers/CSS3DRenderer.js"></script>
+
+		<div id="container"></div>
+		<div id="blocker"></div>
+
+		<script>
+
+			var camera, scene, renderer;
+			var controls;
+
+			var mouse = new THREE.Vector2(), INTERSECTED;
+
+
+			var Element = function ( id, x, y, z, ry ) {
+
+				var div = document.createElement( 'div' );
+				div.style.width = '480px';
+				div.style.height = '480px';
+				div.style.backgroundColor = '#000';
+
+				var iframe = document.createElement( 'iframe' );
+				iframe.style.width = '480px';
+				iframe.style.height = '480px';
+				iframe.style.border = '0px';
+				iframe.src = [ 'img/', id, '?rel=0' ].join( '' );
+				div.appendChild( iframe );
+
+				var object = new THREE.CSS3DObject( div );
+				object.position.set( x, y, z );
+				object.rotation.y = ry;
+
+				return object;
+			};
+
+			var bElement = function ( id, x, y, z, ry ) {
+
+				var div = document.createElement( 'div' );
+				div.style.width = '800px';
+				div.style.height = '800px';
+				div.style.backgroundColor = '#000';
+
+				var iframe = document.createElement( 'iframe' );
+				iframe.style.width = '800px';
+				iframe.style.height = '800px';
+				iframe.style.border = '0px';
+				iframe.src = [ 'img/', id, '?rel=0' ].join( '' );
+				div.appendChild( iframe );
+
+				var object = new THREE.CSS3DObject( div );
+				object.position.set( x, y, z );
+				object.rotation.y = ry;
+
+				return object;
+			};
+
+			init();
+			animate();
+
+			function init() {
+
+				var container = document.getElementById( 'container' );
+
+				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 5000 );
+				camera.position.set( 1000, 700, 1500 );
+
+				scene = new THREE.Scene();
+
+				renderer = new THREE.CSS3DRenderer();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.domElement.style.position = 'absolute';
+				renderer.domElement.style.top = 0;
+				container.appendChild( renderer.domElement );
+
+				var group = new THREE.Group();
+				group.add( new Element( 'impressionism/caillebotte.jpg', 0, 0, 240, 0 ) );
+				group.add( new Element( 'impressionism/degas.jpg', 240, 0, 0, Math.PI / 2 ) );
+				group.add( new Element( 'impressionism/manet.jpg', 0, 0, - 240, Math.PI ) );
+				group.add( new Element( 'impressionism/monet.jpg', - 240, 0, 0, - Math.PI / 2 ) );
+				scene.add( group );
+
+				var group2 = new THREE.Group();
+				group.add( new Element( 'anouveau/klimt.png', 1000, 600, 240, 0 ) );
+				group.add( new Element( 'anouveau/lautrec.jpg', 1240, 600, 0, Math.PI / 2 ) );
+				group.add( new Element( 'anouveau/mucha.jpg', 1000, 600, - 240, Math.PI ) );
+				group.add( new Element( 'anouveau/sullivan.jpg', 760, 600, 0, - Math.PI / 2 ) );
+				scene.add( group2 );
+
+				var group3 = new THREE.Group();
+				group.add( new Element( 'fauvism/derain.jpg', -800, -600, 240, 0 ) );
+				group.add( new Element( 'fauvism/matisse.jpg', -560, -600, 0, Math.PI / 2 ) );
+				group.add( new Element( 'fauvism/matisse2.png', -800, -600, - 240, Math.PI ) );
+				group.add( new Element( 'fauvism/vlaminck.jpg', - 1040, -600, 0, - Math.PI / 2 ) );
+				scene.add( group3 );
+
+				var group4 = new THREE.Group();
+				group.add( new Element( 'pop/hamilton.jpg', 1000, -200, 440, 0 ) );
+				group.add( new Element( 'pop/lichtenstein.jpg', 1240, -200, 200, Math.PI / 2 ) );
+				group.add( new Element( 'pop/oldenberg.jpg', 1000, -200, - 40, Math.PI ) );
+				group.add( new Element( 'pop/warhol.jpg', 760, -200, 200, - Math.PI / 2 ) );
+				scene.add( group4 );
+
+				var group5 = new THREE.Group();
+				group.add( new Element( 'abex/pollock.jpg', -400, -2000, -1000, 0 ) );
+				group.add( new Element( 'abex/rothko.jpg', -160, -2000, -1240, Math.PI / 2 ) );
+				group.add( new Element( 'abex/newman.jpg', -400, -2000, -1480, Math.PI ) );
+				group.add( new Element( 'abex/gottlieb.jpg', -640, -2000, -1240, - Math.PI / 2 ) );
+				scene.add( group5 );
+
+				var group6 = new THREE.Group();
+				group.add( new Element( 'cubism/picasso.jpg', -800, 600, -1000, 0 ) );
+				group.add( new Element( 'cubism/leger.jpg', -560, 600, -1240, Math.PI / 2 ) );
+				group.add( new Element( 'cubism/delaunay.jpg', -800, 600, -1480, Math.PI ) );
+				group.add( new Element( 'cubism/braque.jpg', -1040, 600, -1240, - Math.PI / 2 ) );
+				scene.add( group6 );
+
+				var group7 = new THREE.Group();
+				group.add( new Element( 'futurism/balla.jpg', -3200, 400, -1000, 0 ) );
+				group.add( new Element( 'futurism/boccioni.jpg', -2960, 400, -1240, Math.PI / 2 ) );
+				group.add( new Element( 'futurism/depero.jpg', -3200, 400, -1480, Math.PI ) );
+				group.add( new Element( 'futurism/goncharova.jpg', -3440, 400, -1240, - Math.PI / 2 ) );
+				scene.add( group7 );
+
+				var group8 = new THREE.Group();
+				group.add( new Element( 'suprematism/malevich.jpg', -6200, -400, -1000, 0 ) );
+				group.add( new Element( 'suprematism/lissitzky.jpg', -5960, -400, -1240, Math.PI / 2 ) );
+				group.add( new Element( 'suprematism/malevich2.jpg', -6200, -400, -1480, Math.PI ) );
+				group.add( new Element( 'suprematism/malevich3.jpg', -6440, -400, -1240, - Math.PI / 2 ) );
+				scene.add( group8 );
+
+				var group9 = new THREE.Group();
+				group.add( new Element( 'dada/arp.jpg', 1000, -600, -360, 0 ) );
+				group.add( new Element( 'dada/duchamp.jpg', 1240, -600, -600, Math.PI / 2 ) );
+				group.add( new Element( 'dada/hoch.jpg', 1000, -600, - 840, Math.PI ) );
+				group.add( new Element( 'dada/picabia.jpg', 760, -600, -600, - Math.PI / 2 ) );
+				scene.add( group9 );
+
+				var group10 = new THREE.Group();
+				group.add( new Element( 'surrealism/dali.jpg', -2200, 200, -1000, 0 ) );
+				group.add( new Element( 'surrealism/miro.jpg', -1960, 200, -1240, Math.PI / 2 ) );
+				group.add( new Element( 'surrealism/oppenheimer.jpg', -2200, 200, -1480, Math.PI ) );
+				group.add( new Element( 'surrealism/tanguy.jpg', -2440, 200, -1240, - Math.PI / 2 ) );
+				scene.add( group10 );
+
+				controls = new THREE.TrackballControls( camera );
+				controls.rotateSpeed = 5;
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+				var blocker = document.getElementById( 'blocker' );
+				blocker.style.display = 'none';
+
+				document.addEventListener( 'mousedown', function () { blocker.style.display = ''; } );
+				document.addEventListener( 'mouseup', function () { blocker.style.display = 'none'; } );
+
+			}
+
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				controls.update();
+				renderer.render( scene, camera );
+
+			}
+
+			// function render() {
+			// 	var intersects = raycaster.intersectObjects( scene.children );
+
+			// 	if ( intersects.length > 0 ) {
+
+			// 		if ( INTERSECTED != intersects[ 0 ].group2 ) {
+
+			// 			if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+
+			// 			INTERSECTED = intersects[ 0 ].group2;
+			// 			INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
+			// 			INTERSECTED.material.emissive.setHex( 0xff0000 );
+
+			// 		}
+
+			// 	} else {
+
+			// 		if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+
+			// 		INTERSECTED = null;
+
+			// 	}
+
+			// 	renderer.render( scene, camera );
+
+			// }
+
+
+
+		</script>
+	</body>
+</html>
