@@ -24,6 +24,7 @@
 	<body>
 		<script src="scripts/three.js"></script>
 		<script src="scripts/controls/TrackballControls.js"></script>
+		<script src="scripts/controls/DragControls.js"></script>
 		<script src="scripts/renderers/CSS3DRenderer.js"></script>
 
 		<div id="container"></div>
@@ -44,12 +45,12 @@
 				div.style.height = '480px';
 				div.style.backgroundColor = '#000';
 
-				var iframe = document.createElement( 'iframe' );
-				iframe.style.width = '480px';
-				iframe.style.height = '480px';
-				iframe.style.border = '0px';
-				iframe.src = [ 'img/', id, '?rel=0' ].join( '' );
-				div.appendChild( iframe );
+				var img = document.createElement( 'img' );
+				img.style.width = '480px';
+				img.style.height = '480px';
+				img.style.border = '0px';
+				img.src = [ 'img/', id, '?rel=0' ].join( '' );
+				div.appendChild( img );
 
 				var object = new THREE.CSS3DObject( div );
 				object.position.set( x, y, z );
@@ -167,6 +168,13 @@
 				group.add( new Element( 'surrealism/tanguy.jpg', -2440, 200, -1240, - Math.PI / 2 ) );
 				scene.add( group10 );
 
+				var group11 = new THREE.Group();
+				group.add( new Element( 'conceptual/haacke.jpg', -1200, -600, -1000, 0 ) );
+				group.add( new Element( 'conceptual/kosuth.jpg', -960, -600, -1240, Math.PI / 2 ) );
+				group.add( new Element( 'conceptual/ono.jpg', -1200, -600, -1480, Math.PI ) );
+				group.add( new Element( 'conceptual/rauschenberg.jpg', -1440, -600, -1240, - Math.PI / 2 ) );
+				scene.add( group11 );
+
 				controls = new THREE.TrackballControls( camera );
 				controls.rotateSpeed = 5;
 
@@ -179,6 +187,10 @@
 				document.addEventListener( 'mouseup', function () { blocker.style.display = 'none'; } );
 
 			}
+
+			var dragControls = new THREE.DragControls( objects, camera, renderer.domElement );
+				dragControls.addEventListener( 'dragstart', function ( event ) { controls.enabled = false; } );
+				dragControls.addEventListener( 'dragend', function ( event ) { controls.enabled = true; } );
 
 
 			function onWindowResize() {
