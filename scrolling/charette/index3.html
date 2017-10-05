@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scrolling | Charette3</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Slabo+27px" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+<style>
+.circle {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		display: inline-flex;
+		margin-left: 20px;
+		margin-top: 500px;
+	}
+
+	#c1 {
+		background-color: rgb(72,61,139);
+	}
+
+	#c2 {
+		background-color: rgb(106,90,205);
+	}
+
+	#c3 {
+		background-color: rgb(123,104,238);
+	}
+	#c4 {
+		background-color: rgb(205,133,63);
+		width: 500px;
+		height: 500px;
+		border-radius: 50%;
+	}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="circle" id="c1" data-0="transform: rotateX(0deg);" data-700="transform: rotateX(360deg);"></div>
+<div class="circle" id="c2" data-0="transform: scale(1);" data-700="transform: scale(0.1);"></div>
+<div class="circle" id="c3" data-0="transform: rotateY(0deg);" data-700="transform: rotateY(360deg);"></div>
+<div id="c4" data-0="transform: scale(0) skew(0deg);" data-500="transform: scale(1) skew(90deg);" data-800="transform: scale(0) skew(-90);"></div>
+
+<script src="js/skrollr.js"></script>
+    <script>
+     	var s = skrollr.init();
+	</script>
+</body>
+
+</html>
