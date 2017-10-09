@@ -12,6 +12,10 @@
     {
       "name" : "3",
       "file" : "index3.html"
+    },
+    {
+      "name" : "4",
+      "file" : "index4.html"
     }
   ]
 }
