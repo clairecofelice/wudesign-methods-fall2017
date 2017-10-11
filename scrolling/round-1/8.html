@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Round 1 | Experiment 8</title>
+
+	<style>
+
+	body {
+		background-image: url("img/city.jpeg");
+		background-attachment: fixed;
+		background-size: 100vw 100vh;
+	}
+
+	div {
+		display: inline-block;
+	}
+
+	.container {
+		width: 36vw;
+		height: 60vh;
+		display: block;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		z-index: 1000;
+	}
+
+	.b1 {
+		height: 100px;
+		width: 100px;
+		background-position: 0 0;
+	}
+
+	.b2 {
+		background-position: -100px -100px;
+	}
+
+	.b3 {
+		background-position: -100px -200px;
+	}
+
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class ="b1" data-0="transform: translate(0,0);" data-100="transform:translate(0, 100px);"></div>
+	<div class ="b2" data-0="opacity: 0.5;" data-500="opacity:1;"></div>
+	<div class ="b3" data-0="opacity: 0.5;" data-500="opacity:1;"></div>
+
+<script src="js/skrollr.js"></script>
+    <script>
+     	var s = skrollr.init();
+	</script>
+</body>
+
+</html>
