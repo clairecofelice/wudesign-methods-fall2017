@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Round 3 | Experiment 2</title>
+
+	<style>
+
+	.img1 {
+	   background-image:url("img/twin1.jpg");
+	   background-size: 50vw 1000px;
+	   display: inline-block;
+	   width:50%;
+	   height:100px;
+	}
+
+	.img2 {
+	   background-image:url("img/twin2.jpg");
+	   background-size: 50vw 1000px;
+	   display: inline-block;
+	   width:50%;
+	   height:100px;
+	}
+
+
+	.container_left {
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		position: fixed;
+	}
+
+	.container_right {
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		position: fixed;
+	}
+
+	.piece1 {
+  	 	background-position:0 0;
+	}
+
+	.piece2 {
+	   	background-position:0 -100px;
+	}
+
+	.piece3 {
+	   	background-position:0 -200px;
+	}
+
+	.piece4 {
+	   	background-position:0 -300px;
+	}
+	.piece5 {
+	   	background-position:0 -400px;
+	}
+	.piece6 {
+  	 	background-position:0 -500px;
+	}
+	.piece7 {
+  	 	background-position:0 -600px;
+	}
+	.piece8 {
+	   	background-position:0 -700px;
+	}
+	.piece9 {
+	   	background-position:0 -800px;
+	}
+	.piece10 {
+	   	background-position:0 -900px;
+	}
+
+
+	</style>
+
+</head>
+
+<body>
+
+<div class="container_left">
+	<div class="img1 piece1" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
+	<div class="img1 piece2" ></div>
+	<div class="img1 piece3" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
+	<div class="img1 piece4"></div>
+	<div class="img1 piece5" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
+	<div class="img1 piece6"></div>
+	<div class="img1 piece7" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
+	<div class="img1 piece8"></div>
+	<div class="img1 piece9" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
+	<div class="img1 piece10"></div>
+</div>
+
+<div class="container_right">
+	<div class="img2 piece1"></div>
+	<div class="img2 piece2" data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+	<div class="img2 piece3"></div>
+	<div class="img2 piece4"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+	<div class="img2 piece5"></div>
+	<div class="img2 piece6"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+	<div class="img2 piece7"></div>
+	<div class="img2 piece8"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+	<div class="img2 piece9"></div>
+	<div class="img2 piece10"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+
+</div>
+
+
+<script src="js/skrollr.js"></script>
+    <script>
+     	var s = skrollr.init();
+	</script>
+</body>
+
+</html>
