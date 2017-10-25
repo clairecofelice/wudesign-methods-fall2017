@@ -21,11 +21,23 @@
 	   height:100px;
 	}
 
+	.container_fixed {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+	}
 
 	.container_left {
+		position: absolute;
+		width: 100%;
+		height: 100%;
 	}
 
 	.container_right {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 50vw;
 	}
 
 	.piece1 {
@@ -69,31 +81,34 @@
 
 <body>
 
-<div class="container_left">
-	<div class="img1 piece1"></div>
-	<div class="img1 piece2" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
-	<div class="img1 piece3"></div>
-	<div class="img1 piece4" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
-	<div class="img1 piece5"></div>
-	<div class="img1 piece6" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
-	<div class="img1 piece7"></div>
-	<div class="img1 piece8" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
-	<div class="img1 piece9"></div>
-	<div class="img1 piece10" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
-</div>
+<div class="container_fixed">
 
-<div class="container_right">
-	<div class="img2 piece1"></div>
-	<div class="img2 piece2" data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
-	<div class="img2 piece3"></div>
-	<div class="img2 piece4"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
-	<div class="img2 piece5"></div>
-	<div class="img2 piece6"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
-	<div class="img2 piece7"></div>
-	<div class="img2 piece8"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
-	<div class="img2 piece9"></div>
-	<div class="img2 piece10"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+	<div class="container_left">
+		<div class="img1 piece1"></div>
+		<div class="img1 piece2" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
+		<div class="img1 piece3"></div>
+		<div class="img1 piece4" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
+		<div class="img1 piece5"></div>
+		<div class="img1 piece6" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
+		<div class="img1 piece7"></div>
+		<div class="img1 piece8" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
+		<div class="img1 piece9"></div>
+		<div class="img1 piece10" data-0="transform:translate(0,0);" data-200="transform:translate(50vw,0);"></div>
+	</div>
 
+	<div class="container_right">
+		<div class="img2 piece1"></div>
+		<div class="img2 piece2" data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+		<div class="img2 piece3"></div>
+		<div class="img2 piece4"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+		<div class="img2 piece5"></div>
+		<div class="img2 piece6"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+		<div class="img2 piece7"></div>
+		<div class="img2 piece8"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+		<div class="img2 piece9"></div>
+		<div class="img2 piece10"  data-0="transform:translate(0,0);" data-200="transform:translate(-50vw,0);"></div>
+
+	</div>
 </div>
 
 
