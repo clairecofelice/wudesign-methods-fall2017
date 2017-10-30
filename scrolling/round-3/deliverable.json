@@ -2,39 +2,39 @@
   {
   "entrypoints" : [
     {
-      "name" : "1",
+      "name" : "1: Horizontal Swap",
       "file" : "1.html"
     },
      {
-      "name" : "2",
+      "name" : "2: Horizontal Pull Apart",
       "file" : "2.html"
     },
     {
-      "name" : "3",
+      "name" : "3: Horizontal Slide Outt",
       "file" : "3.html"
     },
     {
-      "name" : "4",
+      "name" : "4: Horizontal Slide and Swap",
       "file" : "4.html"
     },
     {
-      "name" : "5",
+      "name" : "5: Added Second Set of Images",
       "file" : "5.html"
     },
      {
-      "name" : "6",
+      "name" : "6: Simultaneous Slide Out",
       "file" : "6.html"
     },
     {
-      "name" : "7",
+      "name" : "7: Slide and Opacity Change",
       "file" : "7.html"
     },
     {
-      "name" : "8",
+      "name" : "8: Added Third Set of Images and Vertical Slide",
       "file" : "8.html"
     },
      {
-      "name" : "9",
+      "name" : "9: Horizontal Rotate Transition",
       "file" : "9.html"
     },
     {
