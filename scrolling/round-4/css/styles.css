@@ -1,0 +1,423 @@
+	.img1 {
+	   background-image:url("img/twin1.jpg");
+	   background-size: 50vw 1000px;
+	   display: inline-block;
+	   width:5vw;
+	   height:5vw;
+	}
+
+	.img2 {
+	   background-image:url("img/twin2.jpg");
+	   background-size: 50vw 1000px;
+	   display: inline-block;
+	   width:5vw;
+	   height:5vw
+	}
+
+	.img3 {
+	   background-image:url("img/orlean.jpg");
+	   background-size: 50vw 1000px;
+	   display: inline-block;
+	   width:5vw;
+	   height:5vw;
+	}
+
+	.img4 {
+	   background-image:url("img/irene.jpg");
+	   background-size: 50vw 1000px;
+	   display: inline-block;
+	   width:5vw;
+	   height:5vw;
+	}
+
+
+	.container_fixed {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		font-size: 0;
+	}
+
+	.container_left {
+		position: absolute;
+		width: 50vw;
+		height: 100%;
+	}
+
+	.container_newleft {
+		position: absolute;
+		width: 50vw;
+		height: 100%;
+	}
+
+	.container_right {
+		position: absolute;
+		width: 50vw;
+		height: 100%;
+		left: 50vw;
+	}
+	.container_newright {
+		position: absolute;
+		width: 50vw;
+		height: 100%;
+		left: 50vw;
+	}
+
+
+	/*row1 */
+
+	.piece1 {
+  	 	background-position:0 0;
+	}
+	.piece2 {
+	   	background-position:-5vw 0;
+	}
+	.piece3 {
+	   	background-position:-10vw 0;
+	}
+	.piece4 {
+	   	background-position:-15vw 0;
+	}
+	.piece5 {
+	   	background-position:-20vw 0;
+	}
+	.piece6 {
+  	 	background-position:-25vw 0;
+	}
+	.piece7 {
+  	 	background-position:-30vw 0;
+	}
+	.piece8 {
+	   	background-position:-35vw 0;
+	}
+	.piece9 {
+	   	background-position:-40vw 0;
+	}
+	.piece10 {
+	   	background-position:-45vw 0;
+	}
+
+
+
+	/*row2 */
+	.piece11 {
+  	 	background-position:0 -5vw;
+	}
+	.piece12 {
+	   	background-position:-5vw -5vw;
+	}
+	.piece13 {
+	   	background-position:-10vw -5vw;
+	}
+	.piece14 {
+	   	background-position:-15vw -5vw;
+	}
+	.piece15 {
+	   	background-position:-20vw -5vw;
+	}
+	.piece16 {
+  	 	background-position:-25vw -5vw;
+	}
+	.piece17 {
+  	 	background-position:-30vw -5vw;
+	}
+	.piece18 {
+	   	background-position:-35vw -5vw;
+	}
+	.piece19 {
+	   	background-position:-40vw -5vw;
+	}
+	.piece20 {
+	   	background-position:-45vw -5vw;
+	}
+
+
+	/*row3 */
+	.piece21 {
+  	 	background-position:0 -10vw;
+	}
+	.piece22 {
+	   	background-position:-5vw -10vw;
+	}
+	.piece23 {
+	   	background-position:-10vw -10vw;
+	}
+	.piece24 {
+	   	background-position:-15vw -10vw;
+	}
+	.piece25 {
+	   	background-position:-20vw -10vw;
+	}
+	.piece26 {
+  	 	background-position:-25vw -10vw;
+	}
+	.piece27 {
+  	 	background-position:-30vw -10vw;
+	}
+	.piece28 {
+	   	background-position:-35vw -10vw;
+	}
+	.piece29 {
+	   	background-position:-40vw -10vw;
+	}
+	.piece30 {
+	   	background-position:-45vw -10vw;
+	}
+
+
+	/*row4 */
+	.piece31 {
+  	 	background-position:0 -15vw;
+	}
+	.piece32 {
+	   	background-position:-5vw -15vw;
+	}
+	.piece33 {
+	   	background-position:-10vw -15vw;
+	}
+	.piece34 {
+	   	background-position:-15vw -15vw;
+	}
+	.piece35 {
+	   	background-position:-20vw -15vw;
+	}
+	.piece36 {
+  	 	background-position:-25vw -15vw;
+	}
+	.piece37 {
+  	 	background-position:-30vw -15vw;
+	}
+	.piece38 {
+	   	background-position:-35vw -15vw;
+	}
+	.piece39 {
+	   	background-position:-40vw -15vw;
+	}
+	.piece40 {
+	   	background-position:-45vw -15vw;
+	}
+
+	/*row5 */
+	.piece41 {
+  	 	background-position:0 -20vw;
+	}
+	.piece42 {
+	   	background-position:-5vw -20vw;
+	}
+	.piece43 {
+	   	background-position:-10vw -20vw;
+	}
+	.piece44 {
+	   	background-position:-15vw -20vw;
+	}
+	.piece45 {
+	   	background-position:-20vw -20vw;
+	}
+	.piece46 {
+  	 	background-position:-25vw -20vw;
+	}
+	.piece47 {
+  	 	background-position:-30vw -20vw;
+	}
+	.piece48 {
+	   	background-position:-35vw -20vw;
+	}
+	.piece49 {
+	   	background-position:-40vw -20vw;
+	}
+	.piece50 {
+	   	background-position:-45vw -20vw;
+	}
+
+	/*row6 */
+	.piece51 {
+  	 	background-position:0 -25vw;
+	}
+	.piece52 {
+	   	background-position:-5vw -25vw;
+	}
+	.piece53 {
+	   	background-position:-10vw -25vw;
+	}
+	.piece54 {
+	   	background-position:-15vw -25vw;
+	}
+	.piece55 {
+	   	background-position:-20vw -25vw;
+	}
+	.piece56 {
+  	 	background-position:-25vw -25vw;
+	}
+	.piece57 {
+  	 	background-position:-30vw -25vw;
+	}
+	.piece58 {
+	   	background-position:-35vw -25vw;
+	}
+	.piece59 {
+	   	background-position:-40vw -25vw;
+	}
+	.piece60 {
+	   	background-position:-45vw -25vw;
+	}
+
+	/*row7 */
+	.piece61 {
+  	 	background-position:0 -30vw;
+	}
+	.piece62 {
+	   	background-position:-5vw -30vw;
+	}
+	.piece63 {
+	   	background-position:-10vw -30vw;
+	}
+	.piece64 {
+	   	background-position:-15vw -30vw;
+	}
+	.piece65 {
+	   	background-position:-20vw -30vw;
+	}
+	.piece66 {
+  	 	background-position:-25vw -30vw;
+	}
+	.piece67 {
+  	 	background-position:-30vw -30vw;
+	}
+	.piece68 {
+	   	background-position:-35vw -30vw;
+	}
+	.piece69 {
+	   	background-position:-40vw -30vw;
+	}
+	.piece70 {
+	   	background-position:-45vw -30vw;
+	}
+
+	/*row8 */
+	.piece71 {
+  	 	background-position:0 -35vw;
+	}
+	.piece72 {
+	   	background-position:-5vw -35vw;
+	}
+	.piece73 {
+	   	background-position:-10vw -35vw;
+	}
+	.piece74 {
+	   	background-position:-15vw -35vw;
+	}
+	.piece75 {
+	   	background-position:-20vw -35vw;
+	}
+	.piece76 {
+  	 	background-position:-25vw -35vw;
+	}
+	.piece77 {
+  	 	background-position:-30vw -35vw;
+	}
+	.piece78 {
+	   	background-position:-35vw -35vw;
+	}
+	.piece79 {
+	   	background-position:-40vw -35vw;
+	}
+	.piece80 {
+	   	background-position:-45vw -35vw;
+	}
+
+	/*row9 */
+	.piece81 {
+  	 	background-position:0 -40vw;
+	}
+	.piece82 {
+	   	background-position:-5vw -40vw;
+	}
+	.piece83 {
+	   	background-position:-10vw -40vw;
+	}
+	.piece84 {
+	   	background-position:-15vw -40vw;
+	}
+	.piece85 {
+	   	background-position:-20vw -40vw;
+	}
+	.piece86 {
+  	 	background-position:-25vw -40vw;
+	}
+	.piece87 {
+  	 	background-position:-30vw -40vw;
+	}
+	.piece88 {
+	   	background-position:-35vw -40vw;
+	}
+	.piece89 {
+	   	background-position:-40vw -40vw;
+	}
+	.piece90 {
+	   	background-position:-45vw -40vw;
+	}
+
+	/*row10 */
+	.piece91 {
+  	 	background-position:0 -45vw;
+	}
+	.piece92 {
+	   	background-position:-5vw -45vw;
+	}
+	.piece93 {
+	   	background-position:-10vw -45vw;
+	}
+	.piece94 {
+	   	background-position:-15vw -45vw;
+	}
+	.piece95 {
+	   	background-position:-20vw -45vw;
+	}
+	.piece96 {
+  	 	background-position:-25vw -45vw;
+	}
+	.piece97 {
+  	 	background-position:-30vw -45vw;
+	}
+	.piece98 {
+	   	background-position:-35vw -45vw;
+	}
+	.piece99 {
+	   	background-position:-40vw -45vw;
+	}
+	.piece100 {
+	   	background-position:-45vw -45vw;
+	}
+
+	/*row11 */
+	.piece101 {
+  	 	background-position:0 -50vw;
+	}
+	.piece102 {
+	   	background-position:-5vw -50vw;
+	}
+	.piece103 {
+	   	background-position:-10vw -50vw;
+	}
+	.piece104 {
+	   	background-position:-15vw -50vw;
+	}
+	.piece105 {
+	   	background-position:-20vw -50vw;
+	}
+	.piece106 {
+  	 	background-position:-25vw -50vw;
+	}
+	.piece107 {
+  	 	background-position:-30vw -50vw;
+	}
+	.piece108 {
+	   	background-position:-35vw -50vw;
+	}
+	.piece109 {
+	   	background-position:-40vw -50vw;
+	}
+	.piece110 {
+	   	background-position:-45vw -50vw;
+	}
+
