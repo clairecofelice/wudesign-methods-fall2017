@@ -1,4 +1,4 @@
-.img1 {
+	.img1 {
 	   background-image:url("img/twin1.jpg");
 	   background-size: 50vw 1000px;
 	   display: inline-block;
@@ -18,37 +18,18 @@
 	   background-image:url("img/orlean.jpg");
 	   background-size: 50vw 1000px;
 	   display: inline-block;
-	   position: relative;
-	   width:50%;
-	   height:100px;
+	   width:5vw;
+	   height:5vw;
 	}
 
 	.img4 {
 	   background-image:url("img/irene.jpg");
 	   background-size: 50vw 1000px;
 	   display: inline-block;
-	   position: relative;
-	   width:50%;
-	   height:100px;
+	   width:5vw;
+	   height:5vw;
 	}
 
-	.img5 {
-	   background-image:url("img/david.jpg");
-	   background-size: 50vw 1000px;
-	   display: inline-block;
-	   position: relative;
-	   width:50%;
-	   height:100px;
-	}
-
-	.img6 {
-	   background-image:url("img/larry.jpg");
-	   background-size: 50vw 1000px;
-	   display: inline-block;
-	   position: relative;
-	   width:50%;
-	   height:100px;
-	}
 
 	.container_fixed {
 		position: fixed;
@@ -67,7 +48,6 @@
 		position: absolute;
 		width: 50vw;
 		height: 100%;
-		bottom: 0px;
 	}
 
 	.container_right {
@@ -76,47 +56,11 @@
 		height: 100%;
 		left: 50vw;
 	}
-
-	.container1 {
-		width: 100%;
+	.container_newright {
+		position: absolute;
+		width: 50vw;
 		height: 100%;
-		text-align: center;
-		position: fixed;
-	}
-
-	.container2 {
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		position: fixed;
-	}
-
-	.container3 {
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		position: fixed;
-	}
-
-	.container4 {
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		position: fixed;
-	}
-
-	.container5 {
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		position: fixed;
-	}
-
-	.container6 {
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		position: fixed;
+		left: 50vw;
 	}
 
 
