@@ -1,0 +1,168 @@
+.rectangle {
+	display: none;
+	width: 150px;
+	height: 100px;
+	background-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 40vh;
+}
+
+
+.rectangle.rollRight {
+	transform: rotate(360deg) translateX(500px);
+	transition: all 4s linear;
+}
+
+@keyframes rotatingSkew {
+  0% { transform:skew(0deg); } 
+  25% { transform:skew(45deg); }
+  50% { transform:skew(90deg); }
+  75% { transform:skew(135deg); }
+  100% { transform:skew(180deg); }
+}
+
+.rectangle.rotatingSkew {
+	animation: windshield 2s infinite;
+}
+
+.rectangle.dropShadow {
+	box-shadow: 10px 10px 2px black;
+}
+
+.rectangle.bImage {
+	background-image: url("img/landscape.jpg");
+	background-size: 150px 100px;
+}
+
+.rectangle.blurImage {
+	filter: blur(10px);
+}
+
+.rectangle.darkerImage {
+	filter: brightness(50%);
+}
+
+.rectangle.brighterImage {
+	filter: brightness(150%);
+}
+
+.rectangle.lessContrast {
+	filter: contrast(50%);
+}
+
+.rectangle.moreContrast {
+	filter: contrast(150%);
+}
+
+.rectangle.grayscaleImage {
+	filter: grayscale(100%);
+}
+
+.rectangle.hue-rotateImage {
+	filter: hue-rotate(270deg);
+}
+
+.rectangle.invertImage {
+	filter: invert(100%);
+}
+
+.rectangle.lessOpacity {
+	filter: opacity(50%);
+}
+
+.rectangle.noSaturation {
+	filter: saturate(0%);
+}
+
+.rectangle.moreSaturation {
+	filter: saturate(200%);
+}
+
+.rectangle.sepiaImage {
+	filter: sepia(100%);
+}
+
+@keyframes superSkew {
+  0% { transform:skew(0deg); } 
+  25% { transform:skew(100deg); }
+  50% { transform:skew(1000deg); }
+  75% { transform:skew(10000deg); }
+  100% { transform:skew(10000deg); }
+}
+
+.rectangle.superSkew {
+	animation: superSkew 3s infinite;
+}
+
+.rectangle.rotate {
+	transform: rotate(45deg);
+}
+
+.rectangle.slowSpin {
+	transform: rotate(-360deg);
+	transition: all 2s ease;
+}
+
+.rectangle.expandingSpin {
+	transform: rotate(360deg) scale(10);
+	transition: all 3s linear;
+}
+
+.rectangle.fallingSpin {
+	transform: translateY(100vh) rotate(360deg);
+	transition: all 1s linear;
+}
+
+.rectangle.skew {
+	transform: skew(100deg);
+}
+
+.rectangle.borderShrink {
+	transform: scale(0) rotate(360deg);
+	border-radius: 50%;
+	transition: all 1s ease;
+}
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+.heart:before,
+.heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+.heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}
+
