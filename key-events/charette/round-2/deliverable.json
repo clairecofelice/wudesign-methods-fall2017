@@ -1,0 +1,37 @@
+
+  {
+  "entrypoints" : [
+    {
+      "name" : "Rearranged Maze",
+      "file" : "index.html"
+    },
+     {
+      "name" : "Add Obstacles (enter)",
+      "file" : "index2.html"
+    },
+    {
+      "name" : "Rotate Obstacles (~)",
+      "file" : "index3.html"
+    },
+    {
+      "name" : "Add Moving Obstacles (q)",
+      "file" : "index4.html"
+    },
+    {
+      "name" : "Add Large Obstacles (w,e)",
+      "file" : "index5.html"
+    },
+     {
+      "name" : "Obstacles Blink on p",
+      "file" : "index6.html"
+    },
+    {
+      "name" : "Added Larger Obstacles (t)",
+      "file" : "index7.html"
+    },
+    {
+      "name" : "Rotate All (0) Up/Down Obstacle (9)",
+      "file" : "index8.html"
+    }
+  ]
+}

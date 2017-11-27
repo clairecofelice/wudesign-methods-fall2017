@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> Experiment 1 | Round 2 </title>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+      <style>
+
+      	body {
+      		background-color: #FF7F50;
+      	}
+        
+      	.circle {
+      		width: 100px;
+      		height: 100px;
+      		position: relative;
+      		border-radius: 50%;
+      		background-color: pink;
+      	}
+
+        @keyframes jump {
+            0% {transform: translateY(0);}
+            50% {transform: translateY(-150px);}
+            100% {transform: translateY(0px);}
+        } 
+
+        .circle.jump {
+          animation: jump 0.3s;
+        }
+
+  	  </style>
+    </head>
+
+    <body>
+    	<div class="circle"></div>
+    	
+    	<script>
+    		$(document).keydown(function(e){
+            switch (e.which){
+            case 37:   
+                $(".circle").finish().animate({
+                    left: "-=50"
+                });
+                break;
+            case 38:   
+                $(".circle").finish().animate({
+                    top: "-=50"
+                });
+                break;
+            case 39:    
+                $(".circle").finish().animate({
+                    left: "+=50"
+                });
+                break;
+            case 40:    
+                $(".circle").finish().animate({
+                    top: "+=50"
+                });
+                break;
+            }
+        });
+
+        $(window).on('keyup', function changeSomething(event){ 
+              const keyCode = event.which;
+
+              if (keyCode == "32") {
+                  $(".circle").toggleClass("jump");
+              }
+
+        });
+
+      </script>
+
+    </body>
+
+</html>

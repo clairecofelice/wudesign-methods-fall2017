@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> Round 2 | Experiment 1 </title>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+      <style>
+      	body {
+      		background-color: #FF7F50;
+      	}
+      	.circle {
+      		width: 50px;
+      		height: 50px;
+      		position: relative;
+          top: 47vh;
+          left: 48vw;
+      		border-radius: 50%;
+      		background-color: pink;
+      	}
+
+        .square {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          background-color: yellow;
+          z-index: 1000;
+        }
+
+
+        .innerMaze {
+          width: 660px;
+          height: 660px;
+          position: relative;
+          margin-left: 30vw;
+          margin-top: 10vh;
+        }
+
+        .one {
+          top: 0px;
+          left: 0px;
+        }
+
+        .two {
+          top: 0px;
+          left: 150px;
+        }
+
+        .three {
+          top: 0px;
+          left: 300px;
+        }
+
+        .four {
+          top: 0px;
+          left: 450px;
+        }
+
+        .five {
+          top: 0px;
+          left: 600px;
+        }
+
+
+        .six {
+          top: 150px;
+          left: 0px;
+        }
+
+        .seven {
+          top: 150px;
+          left: 150px;
+        }
+
+        .eight {
+          top: 150px;
+          left: 300px;
+        }
+
+        .nine {
+          top: 150px;
+          left: 450px;
+        }
+
+        .ten {
+          top: 150px;
+          left: 600px;
+        }
+
+
+        .eleven {
+          top: 300px;
+          left: 0px;
+        }
+
+        .twelve {
+          top: 300px;
+          left: 150px;
+        }
+
+        .thirteen {
+          top: 300px;
+          left: 450px;
+        }
+
+        .fourteen {
+          top: 300px;
+          left: 600px;
+        }
+
+
+        .fifteen {
+          top: 450px;
+          left: 0px;
+        }
+
+        .sixteen {
+          top: 450px;
+          left: 150px;
+        }
+
+        .seventeen {
+          top: 450px;
+          left: 300px;
+        }
+
+         .eighteen {
+          top: 450px;
+          left: 450px;
+        }
+
+         .nineteen {
+          top: 450px;
+          left: 600px;
+        }
+
+        .twenty {
+          top: 600px;
+          left: 0px;
+        }
+
+        .twentyone {
+          top: 600px;
+          left: 150px;
+        }
+
+        .twentytwo {
+          top: 600px;
+          left: 300px;
+        }
+
+         .twentythree {
+          top: 600px;
+          left: 450px;
+        }
+
+         .twentyfour {
+          top: 600px;
+          left: 600px;
+        }
+
+
+        @keyframes jump {
+            0% {transform: translateY(0);}
+            50% {transform: translateY(-150px);}
+            100% {transform: translateY(0px);}
+        } 
+
+        .circle.jump {
+          animation: jump 0.3s;
+        }
+
+        @keyframes slide {
+            0%   {left: 0px;}
+            25%  {left: 200px;}
+            75%  {left: 50px}
+            100% {left: 100px;}
+        }
+
+        .square.slide {
+            animation: slide .4s infinite;
+        }
+
+  	  </style>
+    </head>
+
+    <body>
+      <div class="circle"></div>
+      <div class="innerMaze">
+          <div class="square one"></div>
+          <div class="square two"></div>
+        	<div class="square three"></div>
+          <div class="square four"></div>
+          <div class="square five"></div>
+          <div class="square six"></div>
+          <div class="square seven"></div>
+          <div class="square eight"></div>
+          <div class="square nine"></div>
+          <div class="square ten"></div>
+          <div class="square eleven"></div>
+          <div class="square twelve"></div>
+          <div class="square thirteen"></div>
+          <div class="square fourteen"></div>
+          <div class="square fifteen"></div>
+          <div class="square sixteen"></div>
+          <div class="square seventeen"></div>
+          <div class="square eighteen"></div>
+          <div class="square nineteen"></div>
+          <div class="square twenty"></div>
+          <div class="square twentyone"></div>
+          <div class="square twentytwo"></div>
+          <div class="square twentythree"></div>
+          <div class="square twentyfour"></div>
+      </div>
+
+    	<script>
+
+    		$(document).keydown(function(e){
+            switch (e.which){
+            case 37:   
+                $(".circle").finish().animate({
+                    left: "-=50"
+                });
+                break;
+            case 38:   
+                $(".circle").finish().animate({
+                    top: "-=50"
+                });
+                break;
+            case 39:    
+                $(".circle").finish().animate({
+                    left: "+=50"
+                });
+                break;
+            case 40:    
+                $(".circle").finish().animate({
+                    top: "+=50"
+                });
+                break;
+            }
+        });
+
+        $(window).on('keyup', function changeSomething(event){ 
+              const keyCode = event.which;
+
+              if (keyCode == "32") {
+                  $(".circle").toggleClass("jump");
+              }
+
+              if (keyCode == "49") {
+                  $(".circle").css("width", "50px");
+                  $(".circle").css("height", "50px");
+
+              }
+
+              if (keyCode == "50") {
+                  $(".circle").css("width", "75px");
+                  $(".circle").css("height", "75px");
+              }
+
+              if (keyCode == "51") {
+                  $(".circle").css("width", "80px");
+                  $(".circle").css("height", "80px");
+              }
+
+              if (keyCode =="65") {
+                 $(".square").css("width", "50px");
+              }
+              if (keyCode =="83") {
+                 $(".square").css("width", "100px");
+              }
+              if (keyCode =="68") {
+                 $(".square").css("width", "200px");
+              }
+
+              if (keyCode =="13") {
+                 $(".square.thirteen").css("display", "block");
+                 $(".square.fourteen").css("display", "block");
+                 $(".square.fifteen").css("display", "block");
+                 $(".square.sixteen").css("display", "block");
+              }
+
+              if (keyCode =="192") {
+                 $(".square").toggleClass(".square.slide");
+              }
+
+        });
+
+    	</script>
+
+    </body>
+
+</html>

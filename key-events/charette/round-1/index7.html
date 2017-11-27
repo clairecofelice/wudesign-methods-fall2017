@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> Round 1 | Experiment 7 </title>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+
+      <style>
+
+      	body {
+      		background-color: #FF7F50;
+      	}
+      	.circle {
+      		width: 50px;
+      		height: 50px;
+      		position: relative;
+          top: 40vh;
+      		border-radius: 50%;
+      		background-color: pink;
+      	}
+
+        .square {
+          width: 50px;
+          height: 50px;
+          position: fixed;
+          background-color: yellow;
+          z-index: 1000;
+        }
+
+        .one {
+          bottom: 850px;
+          left: 400px;
+        }
+
+        .two {
+          bottom: 650px;
+          left: 400px;
+        }
+
+        .three {
+          bottom: 450px;
+          left: 400px;
+        }
+
+        .four {
+          bottom: 250px;
+          left: 400px;
+        }
+
+        .five {
+          bottom: 750;
+          left: 700px;
+        }
+
+        .six {
+          bottom: 550px;
+          left: 700px;
+        }
+
+        .seven {
+          bottom: 350px;
+          left: 700px;
+        }
+
+        .eight {
+          bottom: 150px;
+          left: 700px;
+        }
+
+        .nine {
+          bottom: 650px;
+          left: 1000px;
+        }
+
+        .ten {
+          bottom: 450px;
+          left: 1000px;
+        }
+
+        .eleven {
+          bottom: 250px;
+          left: 1000px;
+        }
+
+        .twelve {
+          bottom: 50px;
+          left: 1000px;
+        }
+
+
+        .thirteen {
+          display: none;
+          bottom: 650px;
+          left: 1300px;
+          background-color: red;
+        }
+
+        .fourteen {
+          display: none;
+          bottom: 450px;
+          left: 1300px;
+          background-color: red;
+
+        }
+
+        .fifteen {
+          display: none;
+          bottom: 250px;
+          left: 1300px;
+          background-color: red;
+
+        }
+
+        .sixteen {
+          display: none;
+          bottom: 50px;
+          left: 1300px;
+          background-color: red;
+
+        }
+
+        @keyframes jump {
+            0% {transform: translateY(0);}
+            50% {transform: translateY(-150px);}
+            100% {transform: translateY(0px);}
+        } 
+
+        .circle.jump {
+          animation: jump 0.3s;
+        }
+
+  	  </style>
+    </head>
+
+    <body>
+    	<div class="circle"></div>
+      <div class="square one"></div>
+      <div class="square two"></div>
+    	<div class="square three"></div>
+      <div class="square four"></div>
+      <div class="square five"></div>
+      <div class="square six"></div>
+      <div class="square seven"></div>
+      <div class="square eight"></div>
+      <div class="square nine"></div>
+      <div class="square ten"></div>
+      <div class="square eleven"></div>
+      <div class="square twelve"></div>
+      <div class="square thirteen"></div>
+      <div class="square fourteen"></div>
+      <div class="square fifteen"></div>
+      <div class="square sixteen"></div>
+
+    	<script>
+
+    		$(document).keydown(function(e){
+            switch (e.which){
+            case 37:   
+                $(".circle").finish().animate({
+                    left: "-=50"
+                });
+                break;
+            case 38:   
+                $(".circle").finish().animate({
+                    top: "-=50"
+                });
+                break;
+            case 39:    
+                $(".circle").finish().animate({
+                    left: "+=50"
+                });
+                break;
+            case 40:    
+                $(".circle").finish().animate({
+                    top: "+=50"
+                });
+                break;
+            }
+        });
+
+        $(window).on('keyup', function changeSomething(event){ 
+              const keyCode = event.which;
+
+              if (keyCode == "32") {
+                  $(".circle").toggleClass("jump");
+              }
+
+              if (keyCode == "49") {
+                  $(".circle").css("width", "50px");
+                  $(".circle").css("height", "50px");
+
+              }
+
+              if (keyCode == "50") {
+                  $(".circle").css("width", "75px");
+                  $(".circle").css("height", "75px");
+              }
+
+              if (keyCode == "51") {
+                  $(".circle").css("width", "80px");
+                  $(".circle").css("height", "80px");
+              }
+
+              if (keyCode =="65") {
+                 $(".square").css("width", "100px");
+              }
+              if (keyCode =="83") {
+                 $(".square").css("width", "200px");
+              }
+
+              if (keyCode =="13") {
+                 $(".square.thirteen").css("display", "block");
+                 $(".square.fourteen").css("display", "block");
+                 $(".square.fifteen").css("display", "block");
+                 $(".square.sixteen").css("display", "block");
+
+              }
+
+        });
+
+    	</script>
+
+    </body>
+
+</html>
