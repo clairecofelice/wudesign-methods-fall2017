@@ -30,7 +30,11 @@
       "file" : "index7.html"
     },
     {
-      "name" : "Rotate All (0) Up/Down Obstacle (9)",
+      "name" : "Rotate All (0)",
+      "file" : "index8.html"
+    },
+    {
+      "name" : "Up/Down Obstacle",
       "file" : "index8.html"
     }
   ]
