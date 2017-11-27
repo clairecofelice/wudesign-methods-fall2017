@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> Round 2 | Experiment 8 </title>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+      <div class="circle"></div>
+
+      <div class="topBlock"></div>
+      <div class="bottomBlock"></div>
+
+      <div class="innerMaze">
+          <div class="square1 one"></div>
+          <div class="square two"></div>
+        	<div class="square three"></div>
+          <div class="square1 four"></div>
+          <div class="square five"></div>
+          <div class="square six"></div>
+          <div class="square1 seven"></div>
+          <div class="square eight"></div>
+          <div class="square nine"></div>
+          <div class="square1 ten"></div>
+          <div class="square eleven"></div>
+          <div class="square twelve"></div>
+          <div class="square1 thirteen"></div>
+          <div class="square fourteen"></div>
+          <div class="square fifteen"></div>
+          <div class="square1 sixteen"></div>
+          <div class="square seventeen"></div>
+          <div class="square eighteen"></div>
+          <div class="square1 nineteen"></div>
+          <div class="square twenty"></div>
+          <div class="square twentyone"></div>
+          <div class="square1 twentytwo"></div>
+          <div class="square twentythree"></div>
+          <div class="square twentyfour"></div>
+
+          <div class="square2 s1"></div>
+          <div class="square2 s2"></div>
+          <div class="square2 s3"></div>
+          <div class="square2 s4"></div>
+          <div class="square2 s5"></div>
+          <div class="square2 s6"></div>
+          <div class="square2 s7"></div>
+          <div class="square2 s8"></div>
+          <div class="square2 s9"></div>
+          <div class="square2 s10"></div>
+          <div class="square2 s11"></div>
+          <div class="square2 s12"></div>
+          <div class="square2 s13"></div>
+          <div class="square2 s14"></div>
+          <div class="square2 s15"></div>
+          <div class="square2 s16"></div>
+          <div class="square2 s17"></div>
+          <div class="square2 s18"></div>
+          <div class="square2 s19"></div>
+          <div class="square2 s20"></div>
+          <div class="square2 s21"></div>
+          <div class="square2 s22"></div>
+          <div class="square2 s23"></div>
+          <div class="square2 s24"></div>
+          <div class="square2 s25"></div>
+          <div class="square2 s26"></div>
+          <div class="square2 s27"></div>
+          <div class="square2 s28"></div>
+          <div class="square2 s29"></div>
+
+          <div class="square3 s30"></div>
+          <div class="square3 s31"></div>
+          <div class="square3 s32"></div>
+          <div class="square3 s33"></div>
+          <div class="square3 s34"></div>
+          <div class="square3 s35"></div>
+      </div>
+
+    	<script>
+
+    		$(document).keydown(function(e){
+            switch (e.which){
+            case 37:   
+                $(".circle").finish().animate({
+                    left: "-=20"
+                });
+                break;
+            case 38:   
+                $(".circle").finish().animate({
+                    top: "-=20"
+                });
+                break;
+            case 39:    
+                $(".circle").finish().animate({
+                    left: "+=20"
+                });
+                break;
+            case 40:    
+                $(".circle").finish().animate({
+                    top: "+=20"
+                });
+                break;
+            }
+        });
+
+        $(window).on('keyup', function changeSomething(event){ 
+              const keyCode = event.which;
+
+              if (keyCode == "32") {
+                  $(".circle").toggleClass("jump");
+              }
+
+              if (keyCode =="76") {
+                 $(".circle").css("width", "30px");
+                 $(".circle").css("height", "30px");
+              }
+
+              if (keyCode == "49") {
+                  $(".circle").css("width", "50px");
+                  $(".circle").css("height", "50px");
+              }
+
+              if (keyCode == "50") {
+                  $(".circle").css("width", "75px");
+                  $(".circle").css("height", "75px");
+              }
+
+              if (keyCode == "51") {
+                  $(".circle").css("width", "80px");
+                  $(".circle").css("height", "80px");
+              }
+
+              if (keyCode =="65") {
+                 $(".square").css("width", "50px");
+              }
+              if (keyCode =="83") {
+                 $(".square").css("width", "100px");
+              }
+              if (keyCode =="68") {
+                 $(".square").css("width", "200px");
+              }
+
+              if (keyCode =="13") {
+                 $(".square2").css("display", "block");
+              }
+
+              if (keyCode =="192") {
+                 $(".square").toggleClass("rotateClockwise");
+              }
+
+              if (keyCode =="81") {
+                 $(".square1.one").toggleClass("slide");
+                 $(".square1.twentytwo").toggleClass("slideDowEn");
+              }
+
+              if (keyCode =="87") {
+                 $(".square2.s19").toggleClass("grow");
+              }
+
+              if (keyCode =="69") {
+                 $(".square2.s14").toggleClass("growSkew");
+              }
+
+              if (keyCode =="80") {
+                 $(".square1").toggleClass("blink");
+              }
+
+              if (keyCode =="84") {
+                 $(".square3").css("display", "block");
+              }
+
+              if (keyCode =="48") {
+                 $("div").toggleClass("allRotate");
+              }
+
+  
+
+        });
+
+    	</script>
+
+    </body>
+
+</html>

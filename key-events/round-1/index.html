@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> Keyed Input | Round 1 </title>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+      <style>
+
+      	body {
+      		background-color: #FF7F50;
+      	}
+      	.circle {
+      		width: 100px;
+      		height: 100px;
+      		position: relative;
+      		border-radius: 50%;
+      		background-color: pink;
+      	}
+
+  	  </style>
+    </head>
+
+    <body>
+    	<div class="circle"></div>
+    	
+    	<script>
+    		$(document).keydown(function(e){
+            switch (e.which){
+            case 37:   
+                $("div").finish().animate({
+                    left: "-=20"
+                });
+                break;
+            case 38:   
+                $("div").finish().animate({
+                    top: "-=20"
+                });
+                break;
+            case 39:    
+                $("div").finish().animate({
+                    left: "+=20"
+                });
+                break;
+            case 40:    
+                $("div").finish().animate({
+                    top: "+=20"
+                });
+                break;
+            }
+        });
+    	</script>
+
+    </body>
+
+</html>
