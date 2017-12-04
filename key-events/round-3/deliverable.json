@@ -1,0 +1,25 @@
+
+  {
+  "entrypoints" : [
+    {
+      "name" : "Collision Detection",
+      "file" : "index1.html"
+    },
+     {
+      "name" : "Collision w/Multiple Obstacles",
+      "file" : "index2.html"
+    },
+    {
+      "name" : "Static Obstacles",
+      "file" : "index3.html"
+    },
+    {
+      "name" : "Change Component on Keypress (s)",
+      "file" : "index4.html"
+    },
+    {
+      "name" : "Basic Level Change",
+      "file" : "index5.html"
+    }
+  ]
+}
