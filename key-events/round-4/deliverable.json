@@ -1,0 +1,25 @@
+
+  {
+  "entrypoints" : [
+    {
+      "name" : "Maze Refinements",
+      "file" : "index1.html"
+    },
+     {
+      "name" : "Intro Page First Draft",
+      "file" : "index2.html"
+    },
+    {
+      "name" : "Maze Final",
+      "file" : "index3.html"
+    },
+    {
+      "name" : "Intro Page Second Draft",
+      "file" : "index4.html"
+    },
+    {
+      "name" : "Intro Page Second Draft",
+      "file" : "index5.html"
+    }
+  ]
+}

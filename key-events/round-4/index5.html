@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
+
+    <style>
+
+    body {
+        font-family: 'Raleway', sans-serif;
+        text-align: left;
+        color: black;
+        font-style: 700;
+        background-color: #f1f1f1;
+    }
+   
+   .container {
+	    width: auto;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-top: 20vh;
+	    margin-bottom: none;
+	    padding: 2vh;
+	    height: 25vh;
+   }
+
+   @-webkit-keyframes blinker {
+		from { opacity: 1.0; }
+		to { opacity: 0.0; }
+	}
+
+   h1 {
+	    font-weight: 700;
+	    font-size: 120px;
+	    margin-top: 30vh;
+	    margin-bottom: 2vh;
+   }
+   
+   .space{
+	    font-style: italic;
+	    margin-top: 5vh;
+	   	animation: blinker 2s linear infinite;
+	   	font-size: 16px;
+   }
+
+   .blue {
+   	 	color: paleturquoise;
+   }
+
+   .light {
+   		font-weight: 300;
+   }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1> <span class ="light"> Escape </span></br>the Maze </h1>
+    <p> Use the arrow keys to navigate through the maze. What other keys can you press to clear the way?</p>
+
+    <p class="space"> Press the spacebar to begin</p>
+</div>
+<script>
+ $(window).on('keyup', function changeSomething(event){ 
+    const keyCode = event.which;
+   console.log(keyCode);
+   if (keyCode == 32) {
+        window.location.href = 'https://clairecofelice.github.io/wudesign-methods-fall2017/key-events/final/main.html';
+        console.log("check");
+    }
+});
+
+</script>
+</body>
+</html>

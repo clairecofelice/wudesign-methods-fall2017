@@ -1,0 +1,331 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+    body {
+    	overflow: hidden;
+    }
+    canvas {
+        background-color: #f1f1f1;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0;
+        margin: 0;
+    }
+
+</style>
+</head>
+<body onload="startGame()">
+    <script>
+
+        var myGamePiece;
+        var myLevel;
+        var myObstacles = [];
+
+        function startGame() {
+            myGamePiece = new component(20, 20, "crimson", 815, 450);
+
+            myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+
+            obstacle1 = new component(50, 10, "paleturquoise", 750, 380);
+            obstacle2 = new component(50, 10, "paleturquoise", 800, 380);
+            obstacle3 = new component(50, 10, "paleturquoise", 850, 380);
+            obstacle4 = new component(10, 170, "paleturquoise", 740, 380);
+            obstacle5 = new component(10, 170, "paleturquoise", 900, 380);
+            obstacle6 = new component(50, 10, "paleturquoise", 750, 540);
+            obstacle7 = new component(50, 10, "paleturquoise", 800, 540);
+            obstacle8 = new component(50, 10, "paleturquoise", 850, 540);
+
+            obstacle9 = new component(0, 10, "orange", 680, 320);
+            obstacle10 = new component(10, 0, "orange", 970, 320);
+            obstacle11 = new component(10, 0, "orange", 740, 320);
+            obstacle11 = new component(10, 0, "orange", 740, 320);
+            obstacle12 = new component(0, 10, "orange", 680, 600);
+            obstacle13 = new component(10, 0, "orange", 870, 550);
+            obstacle14 = new component(10, 0, "orange", 680, 320);
+
+            obstacle15 = new component(10, 0, "paleturquoise", 1040, 260);
+            obstacle16 = new component(10, 0, "paleturquoise", 610, 260);
+            obstacle17 = new component(0, 10, "paleturquoise", 610, 250);
+            obstacle18 = new component(0, 10, "paleturquoise", 610, 680);
+            obstacle19 = new component(0, 10, "paleturquoise", 980, 500);
+            obstacle20 = new component(0, 10, "paleturquoise", 620, 350);
+            obstacle21 = new component(0, 10, "paleturquoise", 620, 430);
+            obstacle22 = new component(10, 0, "paleturquoise", 610, 430);
+
+            obstacle23 = new component(10, 0, "orange", 540, 200);
+            obstacle24 = new component(10, 0, "orange", 1110, 200);
+
+            obstacle25 = new component (0, 10, "orange", 540, 200);
+            obstacle26 = new component (0, 10, "orange", 540, 730);
+
+            obstacle27 = new component (0, 10, "orange", 540, 250);
+            obstacle28 = new component (0, 10, "orange", 540, 320);
+            obstacle29 = new component (0, 10, "orange", 540, 650);
+
+            obstacle30 = new component (0, 10, "orange", 1050, 450);
+            obstacle31 = new component (0, 10, "orange", 1050, 650);
+
+            obstacle32 = new component (10, 0, "orange", 680, 210);
+            obstacle33 = new component (10, 0, "orange", 790, 210);
+            obstacle34 = new component (10, 0, "orange", 900, 210);
+
+           	obstacle35 = new component (10, 0, "orange", 840, 690);
+
+
+			myObstacles.push(obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obstacle6, 
+							 obstacle7, obstacle8, obstacle9, obstacle10, obstacle11, obstacle12, 
+							 obstacle13, obstacle14, obstacle15, obstacle16, obstacle17, obstacle18,
+							 obstacle19, obstacle20, obstacle21, obstacle22, obstacle23, obstacle24,
+							 obstacle25, obstacle26, obstacle27, obstacle28, obstacle29, obstacle30, 
+							 obstacle31, obstacle32, obstacle33, obstacle34, obstacle35);
+            
+            console.log(myObstacles);
+
+            levelOneTop = new component (190, 10, "transparent", 730, 370);
+            levelOneBottom = new component (190, 10, "transparent", 730, 550);
+            levelOneLeft = new component (10, 190, "transparent", 730, 370);
+            levelOneRight = new component (10, 190, "transparent", 910, 370);
+
+            levelTwo = new component (10, 30, "transparent", 970, 580);
+
+            levelThree = new component (10, 30, "transparent", 610, 400);
+
+            levelFour = new component (1, 30, "transparent", 520, 700);
+
+            myGameArea.start();
+        }
+
+        var myGameArea = {
+            canvas : document.createElement("canvas"),
+            start : function() {
+                this.canvas.width = 1680;
+                this.canvas.height = 1050;
+                this.context = this.canvas.getContext("2d");
+                document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                this.frameNo = 0;
+                this.interval = setInterval(updateGameArea, 20);
+                window.addEventListener('keydown', function (e) {
+                    myGameArea.key = e.keyCode;
+                })
+                window.addEventListener('keyup', function (e) {
+                    myGameArea.key = false;
+                })
+            },
+            clear : function() {
+                this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            },
+            stop : function() {
+                clearInterval(this.interval);
+            }
+        }
+
+        function everyinterval(n) {
+            if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+            return false;
+        }
+
+        function component(width, height, color, x, y, type) {
+            this.type = type;
+            this.width = width;
+            this.height = height;
+            this.speedX = 0;
+            this.speedY = 0;    
+            this.x = x;
+            this.y = y;    
+            this.update = function() {
+                ctx = myGameArea.context;
+                if (this.type == "text") {
+                  ctx.font = this.width + " " + this.height;
+                  ctx.fillStyle = color;
+                  ctx.fillText(this.text, this.x, this.y);
+                } else {
+                    ctx.fillStyle = color;
+                    ctx.fillRect(this.x, this.y, this.width, this.height);
+                }
+            }
+            this.newPos = function() {
+                this.x += this.speedX;
+                this.y += this.speedY; 
+            }
+            this.crashWith = function(otherobj) {
+                var myleft = this.x;
+                var myright = this.x + (this.width);
+                var mytop = this.y;
+                var mybottom = this.y + (this.height);
+                var otherleft = otherobj.x;
+                var otherright = otherobj.x + (otherobj.width);
+                var othertop = otherobj.y;
+                var otherbottom = otherobj.y + (otherobj.height);
+                var crash = true;
+                if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+                    crash = false;
+                }
+                return crash;
+            }
+        }
+        
+        function gameOver() {
+
+        }
+
+        function updateGameArea() {
+            
+            if (myGamePiece.crashWith(obstacle1) || myGamePiece.crashWith(obstacle2) || myGamePiece.crashWith(obstacle3) || 
+                myGamePiece.crashWith(obstacle4) || myGamePiece.crashWith(obstacle5) || myGamePiece.crashWith(obstacle6) || 
+                myGamePiece.crashWith(obstacle7) || myGamePiece.crashWith(obstacle8) || myGamePiece.crashWith(obstacle9)  || 
+                myGamePiece.crashWith(obstacle9) || myGamePiece.crashWith(obstacle10) || myGamePiece.crashWith(obstacle11) || 
+                myGamePiece.crashWith(obstacle12) || myGamePiece.crashWith(obstacle13) || myGamePiece.crashWith(obstacle14) 
+                || myGamePiece.crashWith(obstacle15) || myGamePiece.crashWith(obstacle16) || myGamePiece.crashWith(obstacle17) || 
+                myGamePiece.crashWith(obstacle18) || myGamePiece.crashWith(obstacle19) || myGamePiece.crashWith(obstacle20) || 
+                myGamePiece.crashWith(obstacle21) || myGamePiece.crashWith(obstacle22) || myGamePiece.crashWith(obstacle23) || 
+                myGamePiece.crashWith(obstacle24) || myGamePiece.crashWith(obstacle25) || myGamePiece.crashWith(obstacle26) || 
+                myGamePiece.crashWith(obstacle27) || myGamePiece.crashWith(obstacle28) || myGamePiece.crashWith(obstacle29) || 
+                myGamePiece.crashWith(obstacle30) || myGamePiece.crashWith(obstacle31) || myGamePiece.crashWith(obstacle32) || 
+                myGamePiece.crashWith(obstacle33) || myGamePiece.crashWith(obstacle34) || myGamePiece.crashWith(obstacle35)) {
+                alert("Try Again!");
+                document.location.reload();
+                myGameArea.stop();
+            } else {
+
+                if (myGamePiece.crashWith(levelOneTop) || myGamePiece.crashWith(levelOneBottom) || 
+                    myGamePiece.crashWith(levelOneLeft) || myGamePiece.crashWith(levelOneRight)) {
+                        obstacle9.width = 300;
+                        obstacle10.height = 280;
+                        obstacle11.height = 60;
+                        obstacle12.width = 300;
+                        obstacle13.height = 60;
+                        obstacle14.height = 280;
+
+                        console.log("check pass");
+                }   
+ 				
+ 				if (myGamePiece.crashWith(levelTwo)) {
+ 						obstacle15.height = 420;
+ 						obstacle16.height = 170;
+ 						obstacle17.width = 440;
+ 						obstacle18.width = 440;
+ 						obstacle19.width = 60;
+ 						obstacle20.width = 60;
+ 						obstacle21.width = 60;
+ 						obstacle22.height = 260;
+
+ 						console.log("check pass2");
+ 				}
+
+ 				if (myGamePiece.crashWith(levelThree)) {
+ 					obstacle23.height = 530;
+ 					obstacle24.height = 530;
+ 					obstacle25.width = 580;
+ 					obstacle26.width = 580;
+
+ 					obstacle27.width = 70;
+ 					obstacle28.width = 70;
+ 					obstacle29.width = 70;
+ 					obstacle30.width = 60;
+ 					obstacle31.width = 60;
+
+ 					obstacle32.height = 40;
+ 					obstacle33.height = 40;
+ 					obstacle34.height = 40;
+ 					obstacle35.height = 40;
+ 				}
+
+ 				if (myGamePiece.crashWith(levelFour)){
+ 					alert("Congratulations! You've escaped the maze!");
+ 				    document.location.reload();
+ 				}
+
+                myGameArea.clear();
+
+                for (let i = 0; i<myObstacles.length; i++) {
+                	myObstacles[i].update();
+                }
+           
+                levelOneTop.update();
+                levelOneBottom.update();
+                levelOneLeft.update();
+                levelOneRight.update();
+                levelTwo.update();
+                levelThree.update();
+                levelFour.update();
+                myGamePiece.speedX = 0;
+                myGamePiece.speedY = 0;
+
+                if (myGameArea.key == 37) {myGamePiece.speedX = -2; }
+                if (myGameArea.key == 39) {myGamePiece.speedX = 2; }
+                if (myGameArea.key == 38) {myGamePiece.speedY = -2; }
+                if (myGameArea.key == 40) {myGamePiece.speedY = 2; }
+
+                if (myGameArea.key == 83) {
+                    obstacle2.width = 20; 
+                    obstacle6.width = 20;
+                }
+
+                if (myGameArea.key == 76) {
+                	obstacle10.height = 240;
+                }
+
+                if (myGameArea.key == 84) {
+                	obstacle20.width = 0;
+                }
+
+                if (myGameArea.key == 85) {
+                	obstacle19.x = 1050;
+                }
+
+                if (myGameArea.key == 79) {
+                	obstacle16.height = 140;
+                }
+
+                if (myGameArea.key == 70) {
+                	obstacle23.height = 490;
+                }
+
+                if (myGameArea.key == 81) {
+                	obstacle27.width = 0;
+                }
+
+                if (myGameArea.key == 87) {
+                	obstacle28.width = 0;
+                }
+
+                if (myGameArea.key == 69) {
+                	obstacle29.width = 0;
+                }
+				
+				if (myGameArea.key == 82) {
+                	obstacle30.width = 0;
+                }
+
+                if (myGameArea.key == 89) {
+                	obstacle31.width = 0;
+                }
+
+                if (myGameArea.key == 90) {
+                	obstacle32.height = 0;
+                }
+
+                if (myGameArea.key == 88) {
+                	obstacle33.height = 0;
+                }
+
+                 if (myGameArea.key == 67) {
+                	obstacle34.height = 0;
+                }
+
+
+ 				if (myGameArea.key == 86) {
+                	obstacle35.height = 0;
+                }
+             
+                myGamePiece.newPos();    
+                myGamePiece.update();
+            }
+        }
+
+</script>
+
+
+</body>
+</html>
